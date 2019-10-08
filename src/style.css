@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+.loginContent input {
+
+}
+
+.emailUser, .passwordUser {
+    width: 100px;
+    border-radius: 15px;
+
+}
