@@ -1,15 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    position: absolute;
+}
+
+.loginContent label {
+    font-size:13px;
+    font-family: sans-serif;
 }
 
 .loginContent input {
-
-}
-
-.emailUser, .passwordUser {
-    width: 100px;
     border-radius: 15px;
-
 }
