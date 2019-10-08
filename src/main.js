@@ -1,14 +1,17 @@
- // Your web app's Firebase configuration
- var firebaseConfig = {
-    apiKey: "AIzaSyCNhZ597mAfgrM58ySiwn8soFLITj1qC6E",
-    authDomain: "scl011-social-network-go.firebaseapp.com",
-    databaseURL: "https://scl011-social-network-go.firebaseio.com",
-    projectId: "scl011-social-network-go",
-    storageBucket: "",
-    messagingSenderId: "880878261795",
-    appId: "1:880878261795:web:7845d6bf7ff12455ed0396",
-    measurementId: "G-NXB0FE95WC"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+
+ let container = document.getElementById("goContainer")
+ let loginContainer = document.createElement("div") 
+ loginContainer.className = "loginContent"
+ console.log(container)
+ loginContainer.innerHTML=
+ `<label id="labelEmail">ingresa tu email</label>`+
+ `<input type="email" id="emailUser" placeholder="xxx@example.com">` +
+ `<label id="labelPassword">contraseña</label>`+
+ `<input type="password" id="passwordUser"  placeholder="ingresa tu contraseña">`+
+ `<button type="submit" id="btn-submit">Ingresar</button>`
+ 
+
+
+  container.appendChild(loginContainer).innerHTML
+
   
