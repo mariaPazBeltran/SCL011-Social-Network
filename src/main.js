@@ -35,7 +35,7 @@
 
 
 
-  /*//// registro
+  //// registro
   let newUsers = document.createElement("div")
   newUsers.className="new-Users"
   newUsers.innerHTML= 
@@ -49,11 +49,16 @@ container.appendChild(newUsers).innerHTML
  btnrRegister.addEventListener('click', ()=>{
   let userEmail = document.getElementById("emailRegister").value
   let userPassword = document.getElementById("passwordRegister").value
+  console.log(userEmail)
+  console.log(userPassword)
   firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
   .catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
+    console.log(errorCode)
     var errorMessage = error.message;
     // ...
   });
- })*/
+ })
+
+
