@@ -34,7 +34,7 @@ Go! Haz nuevxs amigxs, mientras disfrutas el deporte!
 - Personas que usen internet, plataformas online y/o redes sociales.
 
 
-## Entrevistas
+## Entrevistas 🎤
 
 Para conocer los requerimientos del usuario se elabora una entrevista en la cual se conversa con 3 personas que les gusta hacer deporte pero que no necesariamente lo hacen de manera constante, con la intención de conocer sus gustos, necesidades y limitantes.
 
@@ -46,16 +46,41 @@ Como resultado de las mismas se identificaron las siguientes características:
 - No tienen actualmente una herramienta para conseguir personas con quienes hacer deporte, mas allá de su red limitada de conocidos.
 
 Como necesidades propias de una herramienta para conectar con otras personas y hacer deporte dicen lo siguiente:
-
 - Les gustaría publicar su propio entrenamiento con hora y lugar y que otras personas se sumen a su convocatoria.
 - Les gustaría ver las publicaciones de otros usuarios y poder sumarse a dichos entrenamientos.
 - Les gustaría poder ver las actividades clasificadas según deporte.
 
 
-## Planificación y ejecución
 
-Para comenzar se planifican y clasifican las tareas a realizar a través de un tablero de Trello, donde se especifican los pasos necesarios para completar el funcionamiento óptimo de la plataforma.
+## Planificación y ejecución 📝
 
-Se define el primer mapa de flujo y funcionalidades de la plataforma y posterior se realiza el primer prototipo de baja fidelidad con primeras aproximaciones de diseño.
+Para comenzar se planificaron y clasificaron las tareas a realizar a través de un tablero de Trello, donde se especificaron los pasos necesarios para completar el funcionamiento óptimo de la plataforma.
 
-Se procede a realizar primeras entrevistas con los usuarios y se define prototipo de alta con detalles mas definidos.
+Se definió el primer mapa de flujo y funcionalidades de la plataforma y posterior se realizó el primer prototipo de baja fidelidad con primeras aproximaciones de diseño.
+
+Se realizaron las primeras entrevistas con los usuarios y se definió según requerimientos el prototipo de alta con detalles más definidos.
+
+Por último, una vez definido el prototipo final, se desarrolla la aplicación según lineamientos de diseño establecidos.
+
+
+## Test de Usabilidad 📋
+
+Una vez realizado el prototipo de baja fidelidad y de las primeras entrevistas con los usuarios, se analizan resultados y se establece una primera conclusión que nos lleva a las modificaciones y nuevas decisiones de diseño que se implementarán tanto en el prototipo de alta fidelidad como en la plataforma funcional.
+
+Luego de definido el prototipo de alta fidelidad se realizó un segundo test de usabilidad y entrevista con los usuarios para evaluar el uso y entendimiento de la aplicación, de la cual se arrojaron los siguientes resultados:
+
+-
+-
+-
+-
+
+
+Y con lo cual, el diseño del prototipo final quedó establecido de la siguiente manera:
+
+*[insertar imágenes de prototipo de alta aquí]*
+
+
+## Uso 📱 💻
+
+Según requerimiento de usuarios y definición de diseño, la plataforma finalmente puede ser usada a través del siguiente link:
+*[inserte link aqui]*
