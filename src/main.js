@@ -1,6 +1,6 @@
- import {viewLogin} from '/views/screenLogin'
+ import {viewLogin} from './views/screenLogin.js';
  const init = () => {
-    viewLogin();
+    viewLogin()
     
   }
   

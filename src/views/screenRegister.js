@@ -1,5 +1,5 @@
 
-import {registerNewUser} from '/models/user'
+import {registerNewUser} from '../models/user.js'
 export const viewRegister=()=>{
 /// registro
 let container = document.getElementById("goContainer")

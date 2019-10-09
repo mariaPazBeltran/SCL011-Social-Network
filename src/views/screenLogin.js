@@ -1,5 +1,5 @@
-import {viewRegister} from '/views/screenRegister'
-import {logIn} from '/models/user'
+import {viewRegister} from './screenRegister.js';
+import {logIn} from '../models/user.js'
 
 export const viewLogin=()=>{
     let container = document.getElementById("goContainer")
