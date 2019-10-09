@@ -1,5 +1,7 @@
-let result="";
-window.viewLogin=()=>{
+import {viewRegister} from '/views/screenRegister'
+import {logIn} from '/models/user'
+
+export const viewLogin=()=>{
     let container = document.getElementById("goContainer")
     let loginContainer = document.createElement("div") 
     loginContainer.className = "loginContent"
@@ -14,7 +16,7 @@ window.viewLogin=()=>{
      container.appendChild(loginContainer).innerHTML
      const btnRegister = document.getElementById("register-User")
      btnRegister.addEventListener('click', ()=>{
-       return window.viewRegister()
+      viewRegister()
      })
      const btnSubmit = document.getElementById("btn-submit")
   console.log(btnSubmit)
@@ -23,7 +25,6 @@ window.viewLogin=()=>{
   let userPassword = document.getElementById("passwordUser").value
   console.log(userEmail)
   console.log(userPassword) 
-  result = window.logIn(userEmail, userPassword)
+  logIn(userEmail, userPassword)
  })
- return result
 }

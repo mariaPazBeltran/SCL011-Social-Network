@@ -1,4 +1,5 @@
-window.logIn=(userEmail, userPassword)=>{
+
+export const logIn=(userEmail, userPassword)=>{
     firebase.auth().signInWithEmailAndPassword(userEmail, userPassword)
     .catch(function(error) {
       // Handle Errors here.
@@ -10,7 +11,7 @@ window.logIn=(userEmail, userPassword)=>{
       alert("tu usuario o contraseña son incorrectos")
     });
 }
-window.registerNewUser =(userEmail,userPassword)=>{
+export const registerNewUser =(userEmail,userPassword)=>{
     firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
 .catch(function(error) {
   // Handle Errors here.

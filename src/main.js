@@ -1,6 +1,7 @@
+ import {viewLogin} from '/views/screenLogin'
  const init = () => {
-    window.viewLogin();
-    window.logIn()
+    viewLogin();
+    
   }
   
  window.addEventListener('load', init);

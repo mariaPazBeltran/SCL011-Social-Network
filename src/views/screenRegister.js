@@ -1,5 +1,6 @@
 
-window.viewRegister=()=>{
+import {registerNewUser} from '/models/user'
+export const viewRegister=()=>{
 /// registro
 let container = document.getElementById("goContainer")
 let result =""
@@ -18,7 +19,6 @@ let userEmail = document.getElementById("emailRegister").value
 let userPassword = document.getElementById("passwordRegister").value
 console.log(userEmail)
 console.log(userPassword)
-result= window.registerNewUser(userEmail,userPassword)
+registerNewUser(userEmail, userPassword)
 })
-return result
 }
