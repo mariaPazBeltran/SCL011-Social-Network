@@ -14,7 +14,8 @@ export const viewLogin=()=>{
     `<label id="labelPassword">contraseña</label>`+
     `<input type="password" id="passwordUser"  placeholder="ingresa tu contraseña">`+
     `<button type="submit" id="btn-submit">Ingresar</button>`+
-    `<button type="button" id="register-User">Registrarse</button>`
+    `<button type="button" id="register-User">Registrarse</button>`+
+    `<button type="button" id="btn-gmail">Entrar con Gmail</button>`
      container.appendChild(loginContainer).innerHTML
      const btnRegister = document.getElementById("register-User")
      console.log(btnRegister)
