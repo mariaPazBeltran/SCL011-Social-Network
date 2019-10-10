@@ -15,9 +15,7 @@ export const viewLogin=()=>{
     btnLoginContainer.className = "btn-loginContent"
     console.log(container)
     btnLoginContainer.innerHTML=
-    `<label id="labelEmail">ingresa tu email</label>`+
     `<input type="email" id="emailUser" placeholder="xxx@example.com">` +
-    `<label id="labelPassword">contraseña</label>`+
     `<input type="password" id="passwordUser"  placeholder="ingresa tu contraseña">`+
     `<button type="submit" id="btn-submit">Ingresar</button>`+
     `<button type="button" id="btn-gmail">Entrar con Gmail</button>`
