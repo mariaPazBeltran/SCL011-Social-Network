@@ -3,63 +3,12 @@
     padding: 0;
 }
 
-@media (max-width:420px) {
+.loginContent input {
 
-    body {
-        font-size:12px;
-        font-family: 'Roboto', sans-serif;
-    }
-
-    .logo-Container {
-        display: flex;
-        height: 50vh;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .buttons-Init {
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        height:100vh;
-    }
-
-    .buttons-Init button, .login-content button {
-        font-weight: bolder;
-        margin: 10px;
-        border-radius: 20px;
-        width: 210px;
-        height: 40px;
-    }
-
-    /* LOGIN INICIAR SESION */
-
-.login-content, .new-Users {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-.btn-LoginContent, .new-Users .btn-RegisterContainer {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    height:50vh;
-}
-
-.login-content input, .btnRegisterContainer input {
-    background: transparent;
-    width: 250px;
-    height: 20px;
-    border: 0px;
-    border-bottom: 2px solid black;
-    margin:10px;
-}
-
-.login-content input:focus {
-    outline: 0;
-   }
+.emailUser, .passwordUser {
+    width: 100px;
+    border-radius: 15px;
 
 }
