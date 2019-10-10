@@ -1,5 +1,6 @@
 import {viewLogin} from './screenLogin.js';
 import {viewRegister} from './screenRegister.js';
+import {authGoogle} from '../models/user.js';
 
 // se exporta la funcion para luego poder usarla en otro archivo
 export const viewInit = ()=>{
@@ -29,6 +30,9 @@ export const viewInit = ()=>{
        
        btnInitRegister.addEventListener('click', ()=>{
         viewRegister()
+       })
+       btnInitGoogle.addEventListener('click', ()=>{
+        authGoogle()
        })
       
     console.log(btnInitLogin);
