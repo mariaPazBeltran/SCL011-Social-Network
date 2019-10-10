@@ -16,7 +16,7 @@
         align-items: center;
         justify-content: center;
     }
-    
+
     .buttons-Init {
         display:flex;
         flex-direction: column;
@@ -24,7 +24,7 @@
         height:100vh;
     }
 
-    .buttons-Init button, .login-content button {
+    .buttons-Init button, .login-content button, .btn-registerContent button {
         font-weight: bolder;
         margin: 10px;
         border-radius: 20px;
@@ -42,14 +42,14 @@
     height: 100vh;
 }
 
-.btn-LoginContent, .new-Users .btn-RegisterContainer {
+.btn-LoginContent, .btn-registerContent {
     display:flex;
     flex-direction: column;
     align-items: center;
     height:50vh;
 }
 
-.login-content input, .btnRegisterContainer input {
+.login-content input, .btn-registerContent input {
     background: transparent;
     width: 250px;
     height: 20px;
@@ -58,7 +58,7 @@
     margin:10px;
 }
 
-.login-content input:focus {
+.login-content input:focus, .btn-registerContent input:focus {
     outline: 0;
    }
 
