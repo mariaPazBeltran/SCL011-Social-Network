@@ -3,10 +3,11 @@ import {registerNewUser} from '../models/user.js'
 export const viewRegister=()=>{
 /// registro
 let container = document.getElementById("goContainer")
-let result =""
+container.innerHTML ="";
 let newUsers = document.createElement("div")
 newUsers.className="new-Users"
 newUsers.innerHTML= 
+`<input type="text" id="nameRegister" placeholder="nombre de usuario">` +
 `<label id="labelEmailRegister">ingresa tu email</label>`+
 `<input type="email" id="emailRegister" placeholder="xxx@example.com">` +
 `<label id="labelPasswordRegister">contraseña</label>`+

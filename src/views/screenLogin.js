@@ -3,6 +3,7 @@ import {logIn} from '../models/user.js'
 
 export const viewLogin=()=>{
     let container = document.getElementById("goContainer")
+    container.innerHTML=""
     let loginContainer = document.createElement("div") 
     loginContainer.className = "loginContent"
     console.log(container)
@@ -15,6 +16,7 @@ export const viewLogin=()=>{
     `<button type="button" id="register-User">Registrarse</button>`
      container.appendChild(loginContainer).innerHTML
      const btnRegister = document.getElementById("register-User")
+     console.log(btnRegister)
      btnRegister.addEventListener('click', ()=>{
       viewRegister()
      })
