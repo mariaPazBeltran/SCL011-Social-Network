@@ -15,6 +15,8 @@ newUsers.innerHTML=
 `<button type="submit" id="btn-submitRegister">Ingresar</button>`
 container.appendChild(newUsers).innerHTML
 let btnrRegister= document.getElementById("btn-submitRegister");
+/*al apretar el boton, se toma el valor de lo ingresado por el usuario
+  y se inicia la funcion importada con los parametros correctos*/
 btnrRegister.addEventListener('click', ()=>{
 let userEmail = document.getElementById("emailRegister").value
 let userPassword = document.getElementById("passwordRegister").value

@@ -1,4 +1,5 @@
 import {viewRegister} from './screenRegister.js';
+// se importa la funcion de inicio de sesión
 import {logIn} from '../models/user.js'
 
 export const viewLogin=()=>{
@@ -22,6 +23,8 @@ export const viewLogin=()=>{
      })
      const btnSubmit = document.getElementById("btn-submit")
   console.log(btnSubmit)
+  /*al apretar el boton, se toma el valor de lo ingresado por el usuario
+  y se inicia la funcion importada con los parametros correctos*/
   btnSubmit.addEventListener('click', ()=>{
    let userEmail = document.getElementById("emailUser").value
   let userPassword = document.getElementById("passwordUser").value
