@@ -27,6 +27,8 @@ export const registerNewUser =(userEmail,userPassword)=>{
   // ...
 });
 }
+
+
  export const authGoogle=()=>{
   var provider = new firebase.auth.GoogleAuthProvider();
   authentication(provider);

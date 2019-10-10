@@ -8,7 +8,7 @@ export const viewInit = ()=>{
     let initContent = document.createElement("div");
     initContent.className= "init-content";
     let logoInitContainer=  document.createElement("div");
-    logoInitContainer.className = "logo-InitContainer";
+    logoInitContainer.className = "logo-Container";
     logoInitContainer.innerHTML= `<img src="" alt="holi" id=""></img>`;
     let buttonsInit = document.createElement("div");
     buttonsInit.className = "buttons-Init";
