@@ -6,25 +6,27 @@ import {authGoogle} from '../models/user.js'
 export const viewLogin=()=>{
     let container = document.getElementById("goContainer")
     container.innerHTML=""
-    let contentLogin = document.createElement("div");
-    contentLogin.className= "login-content";
-    let logoInitContainer=  document.createElement("div");
-    logoInitContainer.className = "logo-Container";
-    logoInitContainer.innerHTML= `<img src="" alt="holi" id=""></img>`;
-    let btnLoginContainer = document.createElement("div") 
-    btnLoginContainer.className = "btn-loginContent"
+
+    let contentLogin = document.createElement("div") 
+    contentLogin.className = "login-content"
+    let logoInitContainer = document.createElement("div");
+    logoInitContainer.className="logo-Container";
+    logoInitContainer.innerHTML=`<img src="" alt="holi" id=""></img>`;
+    let btnLoginContainer=document.createElement("div");
+    btnLoginContainer.className="btn-LoginContent"
     console.log(container)
     btnLoginContainer.innerHTML=
-    `<input type="email" id="emailUser" placeholder="xxx@example.com">` +
-    `<input type="password" id="passwordUser"  placeholder="ingresa tu contraseña">`+
-    `<button type="submit" id="btn-submit">Ingresar</button>`+
-    `<button type="button" id="btn-gmail">Entrar con Gmail</button>`
+    `<input type="email" id="emailUser" placeholder="Ingresa tu email">` +
+    `<input type="password" id="passwordUser"  placeholder="Contraseña">`+
+    `<button type="submit" id="btn-submit">Iniciar sesión</button>` +
+    `<button type="button" id="btn-gmail">Iniciar sesión con Gmail</button>`
 
-    contentLogin.appendChild(logoInitContainer)
-    contentLogin.appendChild(btnLoginContainer)
-     container.appendChild(contentLogin).innerHTML
-     
-     const btnSubmit = document.getElementById("btn-submit")
+contentLogin.appendChild(logoInitContainer);
+contentLogin.appendChild(btnLoginContainer);
+container.appendChild(contentLogin).innerHTML;
+
+const btnSubmit = document.getElementById("btn-submit")
+
   console.log(btnSubmit)
   /*al apretar el boton, se toma el valor de lo ingresado por el usuario
   y se inicia la funcion importada con los parametros correctos*/
