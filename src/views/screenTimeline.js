@@ -19,5 +19,4 @@ btnPost.addEventListener('click', ()=>{
     takePostValue(valuePost)
     console.log(valuePost)
 })
-
 }
