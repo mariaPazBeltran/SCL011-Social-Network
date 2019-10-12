@@ -13,9 +13,21 @@ let logoInitContainer = document.createElement("div");
     let btnRegisterContainer = document.createElement("div");
     btnRegisterContainer.className="btn-registerContent";
 btnRegisterContainer.innerHTML= 
+<<<<<<< HEAD
 `<input type="text" id="nameRegister" placeholder="Ingresa un nombre de usuario">` +
 `<input type="email" id="emailRegister" placeholder="Ingresa tu email">` +
 `<input type="password" id="passwordRegister"  placeholder="Ingresa tu contraseña">`+
+=======
+<<<<<<< HEAD
+`<input type="text" id="nameRegister" placeholder="Crea un nombre de usuario">` +
+`<input type="email" id="emailRegister" placeholder="Ingresa tu mail">` +
+`<input type="password" id="passwordRegister"  placeholder="Crea tu contraseña">`+
+=======
+`<input type="text" id="nameRegister" placeholder="nombre de usuario">` +
+`<input type="email" id="emailRegister" placeholder="xxx@example.com">` +
+`<input type="password" id="passwordRegister"  placeholder="ingresa tu contraseña">`+
+>>>>>>> 2e0d66d403f4c2c8af7752eca4de66d929675053
+>>>>>>> bc67c2000df018f457a0404071d94d3a969d7eb8
 `<button type="submit" id="btn-submitRegister">Ingresar</button>`
 newUsers.appendChild(logoInitContainer);
 newUsers.appendChild(btnRegisterContainer);
