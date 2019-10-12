@@ -18,15 +18,12 @@
         justify-content: center;
     }
 
-<<<<<<< HEAD
     .logo-Container #img-logo {
         width: 50px;
         height: 50px;
         border-radius: 50px;
     }
     
-=======
->>>>>>> bc67c2000df018f457a0404071d94d3a969d7eb8
     .buttons-Init {
         display:flex;
         flex-direction: column;
@@ -35,12 +32,9 @@
     }
 
     .buttons-Init button, .login-content button, .btn-registerContent button {
-<<<<<<< HEAD
         background: transparent;
         color: white;
         border: 2px solid white;
-=======
->>>>>>> bc67c2000df018f457a0404071d94d3a969d7eb8
         font-weight: bolder;
         margin: 10px;
         border-radius: 20px;
@@ -57,11 +51,7 @@
     height: 100vh;
 }
 
-<<<<<<< HEAD
 .btn-LoginContent, .new-Users .btn-registerContent {
-=======
-.btn-LoginContent, .btn-registerContent {
->>>>>>> bc67c2000df018f457a0404071d94d3a969d7eb8
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -78,16 +68,11 @@
     margin:10px;
 }
 
-<<<<<<< HEAD
 ::-webkit-input-placeholder {
     color: white;
 }
 
 .login-content input:focus {
-=======
-.login-content input:focus, .btn-registerContent input:focus {
->>>>>>> bc67c2000df018f457a0404071d94d3a969d7eb8
     outline: 0;
    }
-
 }
