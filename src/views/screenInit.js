@@ -5,6 +5,7 @@ import {authGoogle} from '../models/user.js';
 // se exporta la funcion para luego poder usarla en otro archivo
 export const viewInit = ()=>{
     // se crea la primera vista
+    document.getElementById("goContainer").innerHTML="";
     let initContent = document.createElement("div");
     initContent.className= "init-content";
     let logoInitContainer=  document.createElement("div");

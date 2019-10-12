@@ -1,3 +1,5 @@
+import {timelineView} from '../views/screenTimeline.js';
+import {viewInit} from '../views/screenInit.js';
 /* funcion que manda la solicitud a firebase para iniciar sesion con usuarios
 previamente registrados*/
 export const logIn=(userEmail, userPassword)=>{
@@ -63,4 +65,28 @@ function authentication(provider){
 
 
 
+export const viewer =()=>{
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      console.log(user)
+      var displayName = user.displayName;
+      var email = user.email;
+      console.log(email)
+      var emailVerified = user.emailVerified;
+      var photoURL = user.photoURL;
+      var isAnonymous = user.isAnonymous;
+      var uid = user.uid;
+      var providerData = user.providerData;
+      // ...
+      console.log("usuario activo")
+      timelineView()
+    } else {
+      // User is signed out.
+      // ...
+      console.log("no hay usuario activo")
+      viewInit()
+    }
+  });
+}
 
