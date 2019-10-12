@@ -9,7 +9,7 @@ export const viewInit = ()=>{
     initContent.className= "init-content";
     let logoInitContainer=  document.createElement("div");
     logoInitContainer.className = "logo-Container";
-    logoInitContainer.innerHTML= `<img src="" alt="holi" id=""></img>`;
+    logoInitContainer.innerHTML= `<img src="" alt="holi" id="img-logo"></img>`;
     let buttonsInit = document.createElement("div");
     buttonsInit.className = "buttons-Init";
     buttonsInit.innerHTML= `<button id ="initLogin">Iniciar sesion</button>` +

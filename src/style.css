@@ -8,6 +8,7 @@
     body {
         font-size:12px;
         font-family: 'Roboto', sans-serif;
+        background: linear-gradient(#59CBFF, #255FFF);
     }
 
     .logo-Container {
@@ -16,15 +17,24 @@
         align-items: center;
         justify-content: center;
     }
+
+    .logo-Container #img-logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+    }
     
     .buttons-Init {
         display:flex;
         flex-direction: column;
         align-items: center;
-        height:100vh;
+        height:50vh;
     }
 
-    .buttons-Init button, .login-content button {
+    .buttons-Init button, .login-content button, .btn-registerContent button {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
         font-weight: bolder;
         margin: 10px;
         border-radius: 20px;
@@ -32,7 +42,6 @@
         height: 40px;
     }
 
-    /* LOGIN INICIAR SESION */
 
 .login-content, .new-Users {
     display:flex;
@@ -42,24 +51,28 @@
     height: 100vh;
 }
 
-.btn-LoginContent, .new-Users .btn-RegisterContainer {
+.btn-LoginContent, .new-Users .btn-registerContent {
     display:flex;
     flex-direction: column;
     align-items: center;
     height:50vh;
 }
 
-.login-content input, .btnRegisterContainer input {
+.login-content input, .btn-registerContent input {
     background: transparent;
     width: 250px;
     height: 20px;
     border: 0px;
-    border-bottom: 2px solid black;
+    color: white;
+    border-bottom: 2px solid white;
     margin:10px;
+}
+
+::-webkit-input-placeholder {
+    color: white;
 }
 
 .login-content input:focus {
     outline: 0;
    }
-
 }
