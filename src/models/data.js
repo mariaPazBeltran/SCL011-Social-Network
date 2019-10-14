@@ -1,11 +1,14 @@
-//import {postViews} from '../views/screenPostView.js'
+import {postViews} from '../views/screenPostView.js'
 
+
+/*aquí guardamos los post en firebase*/
 export const takePostValue =()=>{
     var db = firebase.firestore();
     db.collection("Post").add({
         user:"",
         post: document.getElementById("inputPost").value,
         date: new Date(),
+        uId: firebase.auth().currentUser.uid
     })
     .then(function(docRef) {
         console.log("Document successfully written!", docRef.id);
@@ -17,34 +20,20 @@ export const takePostValue =()=>{
     
 }
 
+
+// aquí se toma los post publicados por los usuarios para poder imprimirlos
 export const recoverPost = ()=>{
     var db = firebase.firestore();
-    db.collection("Post").get()
-    .then(function(querySnapshot) {
-     querySnapshot.forEach(function(doc) {
-      console.log(doc.id, " => ", doc.data());
-    //  postViews(doc)
-    //  console.log(postViews)
-    });
-    })
-    .catch(function(error) {
-        console.log("Error getting documents: ", error);
-    });
-}
-
-
-/*export const recoverPost = ()=>{
-    var db = firebase.firestore();
-    db.collection("Post").where("post", "==", true)
+    db.collection("Post").where("uId", "==", firebase.auth().currentUser.uid)
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
-            // doc.data() is never undefined for query doc snapshots
+            postViews(doc)
             console.log(doc.id, " => ", doc.data());
         });
     })
     .catch(function(error) {
-        console.log("Error getting documents: ", error);
+       // console.log("Error getting documents: ", error);
     });
-}*/
+}
 

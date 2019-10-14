@@ -1,5 +1,6 @@
 import {timelineView} from '../views/screenTimeline.js';
 import {viewInit} from '../views/screenInit.js';
+//import {saveUser} from './data.js'
 /* funcion que manda la solicitud a firebase para iniciar sesion con usuarios
 previamente registrados*/
 export const logIn=(userEmail, userPassword)=>{
@@ -11,14 +12,31 @@ export const logIn=(userEmail, userPassword)=>{
       console.log(errorCode)
       var errorMessage = error.message;
       console.log(errorMessage)
-      // ...
+      
       alert("tu usuario o contraseña son incorrectos")
     });
 }
 
 /* funcion que envia la solicitud a firebase para registrar nuevos usuarios*/
-export const registerNewUser =(userEmail,userPassword)=>{
+export const registerNewUser =(userEmail, userPassword, userName)=>{
     firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
+    .then(function(){
+    //saveUser(userEmail, userPassword, userName)
+    var db = firebase.firestore();
+    db.collection("Users").add({
+      Name: userName,
+      Email: userEmail,
+      Password: userPassword,
+      uId: firebase.auth().currentUser.uid
+    })
+    .then(function(docRef) {
+        console.log("Document successfully written!", docRef.id, docRef.data);
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+    console.log(saveUser)
+    })
 .catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -70,15 +88,7 @@ export const viewer =()=>{
     if (user) {
       // User is signed in.
       console.log(user)
-      var displayName = user.displayName;
-      var email = user.email;
-      console.log(email)
-      var emailVerified = user.emailVerified;
-      var photoURL = user.photoURL;
-      var isAnonymous = user.isAnonymous;
-      var uid = user.uid;
-      var providerData = user.providerData;
-      // ...
+      
       console.log("usuario activo")
       timelineView()
     } else {

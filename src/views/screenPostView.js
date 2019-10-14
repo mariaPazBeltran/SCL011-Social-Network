@@ -1,4 +1,4 @@
-/*export const postViews =(doc)=>{
+export const postViews =(doc)=>{
   let postCard=  document.createElement("div")
   postCard.className="postCard"
   postCard.innerHTML=
@@ -10,4 +10,4 @@
   contentPost.innerHTML= doc.data().post
   postCard.appendChild(contentPost)
   document.getElementById("goContainer").appendChild(postCard).innerHTML
-}*/
+}

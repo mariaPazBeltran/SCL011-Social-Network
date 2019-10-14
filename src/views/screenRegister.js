@@ -26,8 +26,10 @@ let btnrRegister= document.getElementById("btn-submitRegister");
 btnrRegister.addEventListener('click', ()=>{
 let userEmail = document.getElementById("emailRegister").value
 let userPassword = document.getElementById("passwordRegister").value
+let userName =  document.getElementById("nameRegister").value
 console.log(userEmail)
 console.log(userPassword)
-registerNewUser(userEmail, userPassword)
+console.log(userName)
+registerNewUser(userEmail, userPassword, userName)
 })
 }
