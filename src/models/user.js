@@ -29,9 +29,27 @@ export const logIn=(userEmail, userPassword)=>{
 } 
 
 
+
 /* funcion que envia la solicitud a firebase para registrar nuevos usuarios*/
-export const registerNewUser =(userEmail,userPassword)=>{
-  firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
+export const registerNewUser =(userEmail, userPassword, userName)=>{
+    firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
+    .then(function(){
+    //saveUser(userEmail, userPassword, userName)
+    var db = firebase.firestore();
+    db.collection("Users").add({
+      Name: userName,
+      Email: userEmail,
+      Password: userPassword,
+      uId: firebase.auth().currentUser.uid
+    })
+    .then(function(docRef) {
+        console.log("Document successfully written!", docRef.id, docRef.data);
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+    console.log(saveUser)
+    })
 .catch(function(error) {
 // Handle Errors here.
 var errorCode = error.code;
@@ -85,15 +103,7 @@ export const viewer =()=>{
     if (user) {
       // User is signed in.
       console.log(user)
-      let displayName = user.displayName;
-      let email = user.email;
-      console.log(email)
-      let emailVerified = user.emailVerified;
-      let photoURL = user.photoURL;
-      let isAnonymous = user.isAnonymous;
-      let uid = user.uid;
-      let providerData = user.providerData;
-      // ...
+
       console.log("usuario activo")
       timelineView()
     } else {

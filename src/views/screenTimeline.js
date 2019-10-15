@@ -25,7 +25,7 @@ logOut()
 btnPost.addEventListener('click', ()=>{
   /*El boton deberia poder guardar la info del usuario e imprimirla */
     let valuePost= document.getElementById("inputPost").value
-    takePostValue(valuePost)
+    takePostValue()
 
     recoverPost()
     console.log(valuePost)
