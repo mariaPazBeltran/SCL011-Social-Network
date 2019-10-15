@@ -16,9 +16,9 @@ export const takePostValue =()=>{
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
-    });
-    
+    });    
 }
+
 
 
 // aquí se toma los post publicados por los usuarios para poder imprimirlos
