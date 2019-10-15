@@ -13,9 +13,9 @@ export const takePostValue =()=>{
     })
     .catch(function(error) {
         console.error("Error writing document: ", error);
-    });
-    
+    });    
 }
+
 
 export const recoverPost = ()=>{
     var db = firebase.firestore();
