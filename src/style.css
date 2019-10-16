@@ -9,6 +9,16 @@
         font-size:12px;
         font-family: 'Roboto', sans-serif;
         background: linear-gradient(#59CBFF, #255FFF);
+        overflow-x:hidden;
+    }
+
+    .navbar /* con estas propiedades queda listo para desktop*/{
+        display:flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        margin:20px 0px 20px 0px;
+        z-index: 100;
     }
 
     .logo-Container {
@@ -17,13 +27,7 @@
         align-items: center;
         justify-content: center;
     }
-
-    .logo-Container #img-logo {
-        width: 50px;
-        height: 50px;
-        border-radius: 50px;
-    }
-    
+ 
     .buttons-Init {
         display:flex;
         flex-direction: column;
@@ -41,7 +45,6 @@
         width: 210px;
         height: 40px;
     }
-
 
 .login-content, .new-Users {
     display:flex;
@@ -68,11 +71,63 @@
     margin:10px;
 }
 
-::-webkit-input-placeholder {
+
+.login-content input::-webkit-input-placeholder , .btn-registerContent input::-webkit-input-placeholder {
     color: white;
 }
 
-.login-content input:focus {
+.login-content input:focus, .create-Post input:focus {
     outline: 0;
    }
+
+   /* TIMELINE*/
+
+   .timeline-content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    }
+
+.timeline-view {
+    background-color: #F4F4F4;
+    width: 100%;
 }
+
+    .create-Post {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .create-Post input {
+        margin-top:10px;
+        align-self: center;
+        border: 1px solid black;
+        width: 55vh;
+        height: 10vh;
+        border-radius: 15px;
+    }
+
+    .create-Post #btn-post {
+        background:white;
+        color: #255FFF;
+        font-weight: bolder;
+        margin: 7px;
+        border-radius: 15px;
+        width: 55vh;
+        height: 30px;
+    }
+
+    .print-post-container {
+        border: 1px solid black;
+        height: 300px;
+        width: 400px;
+    }   
+
+ 
+}
+
+
+
