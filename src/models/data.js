@@ -12,6 +12,7 @@ export const takePostValue =()=>{
     })
     .then(function(docRef) {
         console.log("Document successfully written!", docRef.id);
+    
         document.getElementById("inputPost").value=""
     })
     .catch(function(error) {
@@ -21,16 +22,21 @@ export const takePostValue =()=>{
 
 
 
+
 // aquí se toma los post publicados por los usuarios para poder imprimirlos
 export const recoverPost = ()=>{
     var db = firebase.firestore();
-    db.collection("Post").where("uId", "==", firebase.auth().currentUser.uid)
+    var postRef =db.collection("Post")
+    postRef
+    .where("uId", "==", firebase.auth().currentUser.uid)
     .get()
     .then(function(querySnapshot) {
-        querySnapshot.forEach(function(doc) {
-            postViews(doc)
-            console.log(doc.id, " => ", doc.data());
+        const postMap = querySnapshot.docs.map(function(doc) {
+            console.log(doc.data().date);
+            return doc.data();
         });
+        postMap.sort((a, b)=>b.date.seconds-a.date.seconds);
+        postViews(postMap.shift());
     })
     .catch(function(error) {
        // console.log("Error getting documents: ", error);

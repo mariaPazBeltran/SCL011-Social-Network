@@ -7,7 +7,7 @@ export const postViews =(doc)=>{
   <button>Editar</button>`
   let contentPost= document.createElement("div")
   contentPost.className="contentPost"
-  contentPost.innerHTML= doc.data().post
+  contentPost.innerHTML= doc.post
   postCard.appendChild(contentPost)
   document.getElementById("goContainer").appendChild(postCard).innerHTML
 }

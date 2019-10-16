@@ -28,6 +28,6 @@ btnPost.addEventListener('click', ()=>{
     takePostValue()
 
     recoverPost()
-    console.log(valuePost)
+   // console.log(valuePost)
 }) 
 }
