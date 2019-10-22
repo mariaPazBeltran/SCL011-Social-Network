@@ -8,7 +8,8 @@ export const takePostValue =()=>{
         user:"",
         post: document.getElementById("inputPost").value,
         date: new Date(),
-        uId: firebase.auth().currentUser.uid
+        uId: firebase.auth().currentUser.uid,
+        likes:  document.getElementById("clicks")
     })
     .then(function(docRef) {
         console.log("Document successfully written!", docRef.id);
