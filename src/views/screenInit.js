@@ -35,7 +35,8 @@ export const viewInit = ()=>{
        btnInitGoogle.addEventListener('click', ()=>{
         authGoogle()
        })
-      
+
+
     console.log(btnInitLogin);
     console.log(btnInitRegister);
     console.log(btnInitGoogle);
