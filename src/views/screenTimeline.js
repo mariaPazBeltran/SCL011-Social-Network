@@ -2,6 +2,7 @@ import {takePostValue} from '../models/data.js'
 import {recoverPost} from '../models/data.js'
 import {logOut} from '../models/logOut.js'
 
+
 export const timelineView=()=>{
 let container = document.getElementById("goContainer");
 container.innerHTML="";
@@ -68,3 +69,6 @@ btnPost.addEventListener('click', ()=>{
 
 }) 
 }
+
+
+

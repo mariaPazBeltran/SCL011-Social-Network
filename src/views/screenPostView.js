@@ -1,4 +1,4 @@
-
+import {editPost} from '../models/data.js'
 import {deletePost} from '../models/data.js'
 
 export const postViews =(doc)=>{
@@ -51,5 +51,13 @@ export const postViews =(doc)=>{
           console.log("No se ha podido actualizar")
         })
   })
+
+
+//acionando boton editar
+
+const editPost = getElementById("edit")
+editPost.addEventListener('click', ()=>{
+  editPost(doc.post);
+})
   
 }
