@@ -24,8 +24,6 @@ export const takePostValue =(valuePost, counter)=>{
 }
 
 
-
-
 // aquí se toma los post publicados por los usuarios para poder imprimirlos
 export const recoverPost = ()=>{
     var db = firebase.firestore();
@@ -46,6 +44,17 @@ export const recoverPost = ()=>{
     })
     .catch(function(error) {
        // console.log("Error getting documents: ", error);
+    });
+}
+
+/* borrar post */
+
+export const deletePost = (id) => {
+    var db = firebase.firestore();
+    db.collection("Post").doc(id).delete().then(function() {
+        console.log("Document successfully deleted!");
+    }).catch(function(error) {
+        console.error("Error removing document: ", error);
     });
 }
 

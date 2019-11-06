@@ -76,7 +76,7 @@
     color: white;
 }
 
-.login-content input:focus, .create-Post input:focus {
+.login-content input:focus {
     outline: 0;
    }
 
@@ -95,6 +95,31 @@
     width: 100%;
 }
 
+/* POST */
+
+#print-here {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postCard {
+    display: flex;
+    flex-direction: row;
+    width: 72vh;
+    margin: 10px;
+    background-color: #c4c4c4;
+    border-radius: 10px;
+}
+
+.postCard #img {
+   background-color: red;
+   margin: 10px;
+   border-radius: 50%; 
+   height: 50px; 
+   width: 50px;
+}
+
     .create-Post {
         display: flex;
         flex-direction: column;
@@ -104,10 +129,21 @@
     .create-Post input {
         margin-top:10px;
         align-self: center;
-        border: 1px solid black;
-        width: 55vh;
+        width: 70vh;
         height: 10vh;
         border-radius: 15px;
+        border: 1px solid black;
+    }
+
+    .create-Post input::placeholder {
+        color:black;
+        align-content: initial;
+        font-size: 13px;
+        font-weight: bolder;
+    }
+
+    .create-Post input:focus{
+        outline:0;
     }
 
     .create-Post #btn-post {
@@ -116,18 +152,38 @@
         font-weight: bolder;
         margin: 7px;
         border-radius: 15px;
-        width: 55vh;
+        width: 70vh;
         height: 30px;
     }
 
     .print-post-container {
         border: 1px solid black;
-        height: 300px;
-        width: 400px;
+        height: 100%;
+        width: 100%;
     }   
+    
 
- 
+
+ .contentPost {
+     width: 50px;
+     font-size: 15px;
+ }
+
+#buttons {
+     display: flex;
+     flex-direction: row; 
+     align-items: flex-end;
+     justify-content: flex-end;
+ }
+
+ #delete, #edit {
+    justify-self: self-end;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 1px solid black;
+    width:12vh;
+    height: 4vh;
+    margin: 3px;
+    margin-bottom: 5px;
 }
-
-
-
+}
