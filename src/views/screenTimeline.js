@@ -35,14 +35,11 @@ createPost.innerHTML =
 `<input type="text" placeholder="¿cúal es tu proxima actividad?" id="inputPost">`+
 `<button id="btn-post">Publicar</button>`
 
+
 let printPostContainer = document.createElement ("div")
 printPostContainer.className="print-post-container";
 printPostContainer.innerHTML =
-`<div id="print-here">
-<p></p>
-</div>`
-
-
+`<div id="print-here"></div>`
 
 
 timelineContent.appendChild(navbar).innerHTML;
@@ -54,6 +51,9 @@ container.appendChild(timelineContent);
 
 
 const btnPost = document.getElementById("btn-post")
+
+
+/*cerrar sesión*/
 const btnClose= document.getElementById("close")
 btnClose.addEventListener('click', ()=>{
 logOut()
@@ -63,10 +63,10 @@ logOut()
 btnPost.addEventListener('click', ()=>{
   /*El boton deberia poder guardar la info del usuario e imprimirla */
     let valuePost= document.getElementById("inputPost").value
-    takePostValue()
+  let counter = 0;
+	
+    takePostValue(valuePost, counter)
 
-    recoverPost()
-   // console.log(valuePost)
 }) 
 }
 
