@@ -6,6 +6,7 @@ export const postViews =(doc)=>{
   postCard.className="postCard"
   postCard.innerHTML=
   `<img alt="user"></img> 
+  <p>${doc.id}</p>
   <button id="delete">Eliminar</button>
   <button id="edit">Editar</button>`
   let contentPost= document.createElement("div")
@@ -14,20 +15,35 @@ export const postViews =(doc)=>{
   let likeContainer= document.createElement("div")
   likeContainer.className= "like-container"
   likeContainer.innerHTML=
-  `<button id="like">like</button>
-  <span id="clicks"></span>`
+  `<button id="${doc.id}" class="like">like</button>
+  <span id="counter">${doc.likes}</span>`
   postCard.appendChild(contentPost)
   postCard.appendChild(likeContainer)
   document.getElementById("print-here").appendChild(postCard).innerHTML
-  const btnLike =  document.getElementById("like");
-  console.log(btnLike)
-  let clicks = 0;
-  document.getElementById("clicks").innerHTML = clicks;
-  btnLike.addEventListener('click', (id)=>{
-   
-      clicks += 1;
-      document.getElementById("clicks").innerHTML = clicks;
-      iLikeIt(id)
+  const btnLike =  document.getElementById(doc.id);
   
+  btnLike.addEventListener('click', ()=>{
+    console.log(btnLike)
+    
+    let counter = doc.likes;
+    counter += 1;	
+    // iLikeIt(id, liked, count)
+    var db = firebase.firestore();
+ 
+    let docRef = db.collection('Post').doc(doc.id);
+        return docRef.update({
+          likes: counter
+        })
+        .then(()=>{
+          console.log("Documento actualizado")
+          document.getElementById("counter").innerHTML=""
+          document.getElementById("counter").innerHTML=counter
+
+        })
+        .catch((error)=>{
+          console.error(error);
+          console.log("No se ha podido actualizar")
+        })
   })
+  
 }

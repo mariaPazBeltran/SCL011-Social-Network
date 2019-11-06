@@ -1,21 +1,19 @@
 
 
-export const iLikeIt =(id)=>{
- 
+export const iLikeIt =(liked, count)=>{
+  
   var db = firebase.firestore();
-  // To update age and favorite color:
-db.collection("Post").doc(id).update({
-  "likes":  document.getElementById("clicks")
-})
-.then(function() {
-  console.log("Document successfully updated!");
-});
-//test.firestore.js
-
-    
-}
-
-/*var starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
-starCountRef.on('value', function(snapshot) {
-  updateStarCount(postElement, snapshot.val());
-});*/
+ 
+  let docRef = db.collection('post').doc(id);
+			return docRef.update({
+				likes: count,
+				liked: liked
+			})
+			.then(()=>{
+				//document.getElementById('like'+doc.id).disabled = true;
+				document.getElementById('heart'+doc.id).style.color = "#ff637d";
+				console.log("Documento actualizado")
+			})
+			.catch((error)=>{
+				console.error(error);
+			})}
