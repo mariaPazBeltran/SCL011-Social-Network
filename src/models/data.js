@@ -34,7 +34,10 @@ export const recoverPost = ()=>{
     .then(function(querySnapshot) {
         const postMap = querySnapshot.docs.map(function(doc) {
             console.log(doc.data().date);
-            return doc.data();
+            return {
+				id: doc.id,
+				...doc.data()
+			};
         });
         postMap.sort((a, b)=>b.date.seconds-a.date.seconds);
         postViews(postMap.shift());
@@ -43,3 +46,47 @@ export const recoverPost = ()=>{
        // console.log("Error getting documents: ", error);
     });
 }
+
+
+
+/*
+//editando post
+
+export const editPost =(id)=>{
+	let db = firebase.firestore();
+	//obteniendo el post
+	db.collection("Post").doc(id).get().then(doc=>{
+		//obtenemos valor de elemento con texto de post
+		document.getElementById(`inputPost`).value = doc.data().message;
+		//daremos display block a input para poder cambiar texto(para que se vea el input)
+		document.getElementById(`inputPost`).style.display = "block";
+		//display none al <p> para que no se veia
+		document.getElementById(`msg${doc.id}`).style.display = "none";
+		//escondemos boton editar
+		document.getElementById(`edit`).style.display = "none";
+		// mostramos boton guardar
+		document.getElementById(`save${doc.id}`).style.display = "inline";
+		//evento con boton guardar
+		document.getElementById('save'+doc.id).addEventListener('click', ()=>{
+			//guardamos nuevo valor de post que esta en input
+			let post = document.getElementById(`inp${doc.id}`).value;
+			// hacemos update de post
+			let docRef = db.collection("Post").doc(id);
+			return docRef.update({
+				message: post
+			})
+			.then(()=>{
+				//volvemos que todo sea como era
+				document.getElementById(`msg${doc.id}`).style.display = "block";
+				document.getElementById(`inp${doc.id}`).style.display = "none";
+				document.getElementById(`save${doc.id}`).style.display = "none";
+				document.getElementById(`edit${doc.id}`).style.display = "inline";
+				console.log("Documento actualizado")
+			})
+			.catch((error)=>{
+				console.error(error);
+			})
+		})
+	})
+}
+*/

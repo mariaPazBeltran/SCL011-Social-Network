@@ -1,4 +1,5 @@
 import {iLikeIt} from '../models/likes.js'
+import {editPost} from '../models/data.js'
 
 export const postViews =(doc)=>{
 
@@ -31,3 +32,11 @@ export const postViews =(doc)=>{
   
   })
 }
+
+//acionando boton editar
+
+const editPost = getElementById("edit")
+editPost.addEventListener('click', ()=>{
+  editPost(doc.post);
+})
+
