@@ -1,4 +1,3 @@
-
 import {registerNewUser} from '../models/user.js'
 export const viewRegister=()=>{
 /// registro

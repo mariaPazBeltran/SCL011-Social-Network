@@ -47,10 +47,8 @@ function validarEmail(valor) {
     "auth/invalid-email": "Por favor ingresa un email válido",
   }
   const errorContainer = document.getElementById(errContainerId);
-
   const imprErr = document.createElement('div');
   imprErr.innerHTML = `<p>${errorMessages[errorCode]}</p>`;
   errorContainer.appendChild(imprErr);
 }
 */
-
