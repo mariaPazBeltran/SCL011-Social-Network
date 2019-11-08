@@ -1,4 +1,4 @@
-import {editPost} from '../models/data.js'
+//import {editPost} from '../models/data.js'
 import {deletePost} from '../models/data.js'
 
 export const postViews =(doc)=>{
