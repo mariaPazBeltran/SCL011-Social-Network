@@ -5,7 +5,7 @@ import {postViews} from '../views/screenPostView.js'
 export const takePostValue =(valuePost, counter)=>{
     var db = firebase.firestore();
     db.collection("Post").add({
-        user:"",
+        user: firebase.auth().currentUser.displayName,
         post: valuePost,
         date: new Date(),
         uId: firebase.auth().currentUser.uid,

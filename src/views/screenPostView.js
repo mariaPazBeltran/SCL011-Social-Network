@@ -6,6 +6,7 @@ export const postViews =(doc)=>{
   postCard.className="postCard";
   postCard.innerHTML=
   `<div id="img"></div> 
+  <span>${doc.user}</span>
   <div id="buttons">
   <button id="edit">Editar</button>
   <button id="delete">Eliminar</button>
