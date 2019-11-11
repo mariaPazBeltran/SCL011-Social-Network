@@ -1,21 +1,22 @@
-import { takePostValue } from '../models/data.js'
-import { recoverPost } from '../models/data.js'
-import { logOut } from '../models/logOut.js'
+import {takePostValue} from '../models/data.js'
+import {profile} from './screenProfile.js'
+import {logOut} from '../models/logOut.js'
 
 //creando contenedor principal del timeline
-export const timelineView = () => {
-  let container = document.getElementById("goContainer");
-  container.innerHTML = "";
-  let timelineContent = document.createElement("div")
-  timelineContent.className = "timeline-content";
-
-  //navbar del timeline
-  let navbar = document.createElement("div")
-  navbar.className = "navbar"
-  navbar.innerHTML =
-    `<nav>
+export const timelineView=()=>{
+let container = document.getElementById("goContainer");
+container.innerHTML="";
+var user = firebase.auth().currentUser.displayName;
+let timelineContent = document.createElement("div")
+timelineContent.className="timeline-content";
+ //navbar del timeline
+let navbar = document.createElement("div")
+navbar.className = "navbar"
+navbar.innerHTML = 
+`<nav>
 <div class=logo>
-<img src="" alt="holi" id=""></img>
+<img src="" alt="img"  id=""></img>
+<h1>${user}</h1>
 <a href="#" class="btn-menu" id="btn-menu"><i class="fas fa-bars"></i></a>
 </div>
     <ul>
@@ -51,13 +52,19 @@ export const timelineView = () => {
   container.appendChild(timelineContent);
 
 
+const btnPost = document.getElementById("btn-post")
+const btnProfile= document.getElementById("perfil")
+/* Se abre el perfil */
+btnProfile.addEventListener('click',()=>{
+  console.log(btnProfile)
+profile()
+})
+/*cerrar sesión*/
+const btnClose= document.getElementById("close")
+btnClose.addEventListener('click', ()=>{
+logOut()
+}) 
 
-  /*cerrar sesión*/
-  const btnClose = document.getElementById("close")
-  btnClose.addEventListener('click', () => {
-    logOut()
-  })
-  
 
   const btnPost = document.getElementById("btn-post")
   btnPost.addEventListener('click', () => {

@@ -1,4 +1,4 @@
-import {registerNewUser} from '../models/user.js'
+import {registerNewUser, checkingEmail} from '../models/user.js'
 export const viewRegister=()=>{
 /// registro
 let container = document.getElementById("goContainer")
@@ -30,5 +30,6 @@ console.log(userEmail)
 console.log(userPassword)
 console.log(userName)
 registerNewUser(userEmail, userPassword, userName)
+checkingEmail()
 })
 }

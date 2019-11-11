@@ -35,15 +35,23 @@ export const registerNewUser = (userEmail, userPassword, userName) => {
   if (validateNewUser(userEmail, userPassword, userName) === true) {
     firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword)
       .then(() => {
-        //saveUser(userEmail, userPassword, userName)
         var db = firebase.firestore();
         db.collection("Users").add({
           Name: userName,
           Email: userEmail,
-          Password: userPassword,
           uId: firebase.auth().currentUser.uid
         })
           .then(() => {
+            var user = firebase.auth().currentUser;
+          user.updateProfile({
+         displayName: userName
+          }).then(function() {
+            // Update successful.
+            console.log("nombre actualizado")
+          }).catch(function(error) {
+            // An error happened.
+            console.log("algo anda mal")
+          });
             window.location.hash = '#/screenTimeline';
           })
       })
@@ -98,14 +106,42 @@ function authentication(provider) {
     });
 }
 
+export const checkingEmail=()=>{
+  var user = firebase.auth().currentUser;
 
+user.sendEmailVerification().then(function() {
+  // Email sent.
+}).catch(function(error) {
+  // An error happened.
+});
+}
+/*export const updateProfile =()=>{
+  var user = firebase.auth().currentUser;
+user.updateProfile({
+  displayName: "Jane Q. User",
+  photoURL: "https://example.com/jane-q-user/profile.jpg"
+}).then(function() {
+  // Update successful.
+}).catch(function(error) {
+  // An error happened.
+});
+}*/
 
 export const viewer = () => {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
+       // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+ 
       console.log(user)
-
+      console.log( user.displayName)
       console.log("usuario activo")
       timelineView()
     } else {
