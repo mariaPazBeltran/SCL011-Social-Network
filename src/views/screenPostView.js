@@ -1,23 +1,29 @@
-import {editPost} from '../models/data.js'
+/*import {editPost} from '../models/data.js'*/
 import {deletePost} from '../models/data.js'
 
 export const postViews =(doc)=>{
   let postCard=  document.createElement("div")
   postCard.className="postCard";
   postCard.innerHTML=
-  `<div id="img"></div> 
-  <div id="buttons">
-  <button id="edit">Editar</button>
-  <button id="delete">Eliminar</button>
-  </div>`
+  `<div id="img"></div>`
+  
   let contentPost= document.createElement("div")
   contentPost.className="contentPost"
   contentPost.innerHTML= doc.post
+
+  let buttons=document.createElement("div")
+  buttons.className="buttons";
+  buttons.innerHTML=
+  `<button id="edit">Editar</button>
+  <button id="delete">Eliminar</button>`
+
   let likeContainer= document.createElement("div")
   likeContainer.className= "like-container"
   likeContainer.innerHTML=
   `<button id="${doc.id}" class="like">like</button>
   <span id="counter">${doc.likes}</span>`
+
+  postCard.appendChild(buttons)
   postCard.appendChild(contentPost)
   postCard.appendChild(likeContainer)
   document.getElementById("print-here").appendChild(postCard).innerHTML

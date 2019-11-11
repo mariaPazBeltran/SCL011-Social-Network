@@ -162,21 +162,17 @@
         width: 100%;
     }   
     
-
-
  .contentPost {
      width: 50px;
      font-size: 15px;
  }
 
-#buttons {
-     display: flex;
-     flex-direction: row; 
-     align-items: flex-end;
-     justify-content: flex-end;
- }
+ .buttons {
+    height: 20px;
+}
 
- #delete, #edit {
+
+ #delete, #edit, .like {
     justify-self: self-end;
     border-radius: 15px;
     background-color: transparent;
@@ -186,4 +182,6 @@
     margin: 3px;
     margin-bottom: 5px;
 }
+
+
 }
