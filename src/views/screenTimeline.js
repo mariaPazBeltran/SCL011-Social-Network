@@ -40,7 +40,8 @@ navbar.innerHTML =
   let createPost = document.createElement("div")
   createPost.className = "create-Post"
   createPost.innerHTML =
-    `<input type="text" placeholder="¿cúal es tu proxima actividad?" id="inputPost">` +
+    `<input type="text" placeholder="¿cúal es tu proxima actividad?" id="inputPost"
+    }">` +
     `<button id="btn-post">Publicar</button>`
 
   //creando container "print-here" donde se imprimirá el "postCard"
@@ -74,8 +75,8 @@ logOut()
     /*El boton deberia poder guardar la info del usuario e imprimirla */
     let valuePost = document.getElementById("inputPost").value
     let counter = 0;
-
-    takePostValue(valuePost, counter)
+    let likeStatus = false
+    takePostValue(valuePost, counter, likeStatus)
 
   })
 }

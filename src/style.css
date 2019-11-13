@@ -156,7 +156,7 @@
 }
 
 .postCard {
-    display: flex;
+    display: block;
     flex-direction: row;
     width: 72vh;
     margin: 10px;
@@ -165,13 +165,16 @@
 }
 
 .postCard #img {
-   background-color: red;
+   background-color: white;
    margin: 10px;
    border-radius: 50%; 
    height: 50px; 
    width: 50px;
 }
-
+#userCdi{
+    display: flex;
+    align-items: center;
+}
     .create-Post {
         display: flex;
         flex-direction: column;
@@ -217,11 +220,18 @@
  .contentPost {
      width: 50px;
      font-size: 15px;
+     margin: auto;
  }
 
- .buttons {
-    height: 20px;
-}
+
+#buttons, .like-container {
+     display: flex;
+     flex-direction: row; 
+     align-items: flex-end;
+     justify-content: flex-end;
+   height: 20px;
+ }
+
 
  #delete, #edit, .like {
     justify-self: self-end;

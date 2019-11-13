@@ -2,15 +2,15 @@ import { postViews } from '../views/screenPostView.js'
 
 
 /*aquí guardamos los post en firebase*/
-export const takePostValue = (valuePost, counter) => {
+export const takePostValue = (valuePost, counter, likeStatus) => {
     var db = firebase.firestore();
     db.collection("Post").add({
         user: firebase.auth().currentUser.displayName,
         post: valuePost,
         date: new Date(),
         uId: firebase.auth().currentUser.uid,
-        likes: counter
-
+        likes: counter,
+        liked: likeStatus
     })
         .then(function (docRef) {
             console.log("Document successfully written!", docRef.id);
@@ -49,37 +49,35 @@ export const recoverPost = () => {
 }
 
 
+
 //editando post
 export const editPost = (id) => {
     let db = firebase.firestore();
     //se obtiene el post
     db.collection("Post").doc(id).get().then(doc => {
-        //se obtiene la valor de texto del post
-        document.getElementById(`inputPost`).value = doc.data().message;
         //mostramos input textarea para poder cambiar texto
         document.getElementById(`inputPost`).style.display = "block";
-        //ocultamos el <p> para que no se vea mientras se hace la edición
-        document.getElementById(`msg${doc.post}`).style.display = "none";
         //se oculta botón editar
-        document.getElementById(`edit`).style.display = "none";
+        document.getElementById(`edit${doc.id}`).style.display = "none";
         //se muestra boton guardar
-        document.getElementById(`save${doc.post}`).style.display = "inline";
+        document.getElementById(`save${doc.id}`).style.display = "inline";
         //se da acción a boton guardar
-        document.getElementById('save' + doc.post).addEventListener('click', () => {
+        document.getElementById("save"+doc.id).addEventListener('click', () => {
             //se guarda el nuevo valor del post que esta en el input
-            let post = document.getElementById(`inp${doc.post}`).value;
+            let post = document.getElementById("inputPost").value;
             //update del post en la base de datos
             let docRef = db.collection("Post").doc(id);
             return docRef.update({
                 message: post
             })
+
                 .then(() => {
                     //se devuelven las vistas a post publicado
                     document.getElementById(`msg${doc.post}`).style.display = "block";
                     document.getElementById(`inp${doc.post}`).style.display = "none";
                     document.getElementById(`save${doc.post}`).style.display = "none";
                     document.getElementById(`edit${doc.post}`).style.display = "inline";
-                    console.log("Documento actualizado")
+                    console.log("Post actualizado")
                 })
                 .catch((error) => {
                     console.error(error);
@@ -90,12 +88,14 @@ export const editPost = (id) => {
 
 
 
+
+
 /* borrar post */
 
 export const deletePost = (id) => {
     var db = firebase.firestore();
     db.collection("Post").doc(id).delete().then(function () {
-        console.log("Document successfully deleted!");
+        console.log("Tu publicación se ha borrado correctamente!");
     }).catch(function (error) {
         console.error("Error removing document: ", error);
     });
