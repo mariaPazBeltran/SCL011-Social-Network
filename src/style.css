@@ -241,7 +241,7 @@
  }
 
 
- #delete, #edit, .like {
+ .delete, .edit, .like {
     justify-self: self-end;
     border-radius: 15px;
     background-color: transparent;
@@ -487,7 +487,7 @@ align-items: center;
  flex-direction: row; 
  align-items: flex-end;
  justify-content: flex-end;
-height: 20px;
+height: 30px;
 }
 
 

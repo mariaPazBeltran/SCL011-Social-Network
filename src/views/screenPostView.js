@@ -10,7 +10,7 @@ export const postViews =(doc)=>{
   postCard.innerHTML=
   `<div id="buttons">
   <button id="edit${doc.post}" class="edit">Editar</button>
-  <button id="delete${doc.id}">Eliminar</button>
+  <button id="delete${doc.id}" class="delete">Eliminar</button>
   <button id="save${doc.post}" class="save" style="display:none">Guardar</button>
   </div>
   <section id="userCdi">
