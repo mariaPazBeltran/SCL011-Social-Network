@@ -11,15 +11,20 @@ let timelineContent = document.createElement("div")
 timelineContent.className="timeline-content";
  //navbar del timeline
 let navbar = document.createElement("div")
-navbar.className = "navbar"
+navbar.className ="navbar"
 navbar.innerHTML = 
 `<nav>
-<div class=logo>
-<img src="" alt="img"  id=""></img>
+<div class="logo">
 <h1>${user}</h1>
-<a href="#" class="btn-menu" id="btn-menu"><i class="fas fa-bars"></i></a>
 </div>
-    <ul>
+
+<div class="burger">
+<div class="line1"></div>
+<div class="line2"></div>
+<div class="line3"></div>
+</div>
+
+    <ul class="btn-burger">
     <button id="perfil">Perfil</button>
     <button id="search-friends">Buscar Amigos</button>
     <button id="close">Cerrar Sesión</button>

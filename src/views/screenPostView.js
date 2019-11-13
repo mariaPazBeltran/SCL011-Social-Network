@@ -1,5 +1,7 @@
+
 import {editPost} from '../models/data.js'
 import { deletePost } from '../models/data.js'
+
 
 //contenedor mayor postCard que luego se imprimirá en el div "print-here"
 export const postViews =(doc)=>{
