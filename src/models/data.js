@@ -56,7 +56,7 @@ export const editPost = (id) => {
     //se obtiene el post
     db.collection("Post").doc(id).get().then(doc => {
         //mostramos input textarea para poder cambiar texto
-        document.getElementById(`inputPost`).style.display = "block";
+        document.getElementById(`inputPost${doc.post}`).style.display = "block";
         //se oculta botón editar
         document.getElementById(`edit${doc.id}`).style.display = "none";
         //se muestra boton guardar
