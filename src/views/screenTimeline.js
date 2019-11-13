@@ -35,7 +35,8 @@ navbar.innerHTML =
   let createPost = document.createElement("div")
   createPost.className = "create-Post"
   createPost.innerHTML =
-    `<input type="text" placeholder="¿cúal es tu proxima actividad?" id="inputPost">` +
+    `<input type="text" placeholder="¿cúal es tu proxima actividad?" id="inputPost"
+    }">` +
     `<button id="btn-post">Publicar</button>`
 
   //creando container "print-here" donde se imprimirá el "postCard"
@@ -52,7 +53,6 @@ navbar.innerHTML =
   container.appendChild(timelineContent);
 
 
-const btnPost = document.getElementById("btn-post")
 const btnProfile= document.getElementById("perfil")
 /* Se abre el perfil */
 btnProfile.addEventListener('click',()=>{
