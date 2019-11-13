@@ -28,7 +28,7 @@ export const postViews =(doc)=>{
   likeContainer.className = "like-container"
   likeContainer.innerHTML =
     `<button id="like${doc.id}" class="like">Like</button>
-  <span id="counter">${doc.likes}</span>`
+  <span id="counter${doc.id}">${doc.likes}</span>`
 
   //asignando el contenedor "contentPost y likeContainer al contenedor postCard"
   postCard.appendChild(contentPost)
@@ -61,9 +61,10 @@ export const postViews =(doc)=>{
       liked: likeStatus
     })
       .then(() => {
+        
         console.log("Likes actualizado")
-        document.getElementById("counter").innerHTML = ""
-        document.getElementById("counter").innerHTML = counter
+        document.getElementById("counter"+doc.id).innerHTML = ""
+        document.getElementById("counter"+doc.id).innerHTML = counter
 
       })
       .catch((error) => {
