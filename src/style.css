@@ -12,16 +12,69 @@
         overflow-x:hidden;
     }
 
-    .navbar /* con estas propiedades queda listo para desktop*/{
-        display:flex;
-        flex-direction: row;
-        width: 100%;
-        height: auto;
-        margin:20px 0px 20px 0px;
-        z-index: 100;
+    .navbar {
+        width: 115vh;
     }
 
-    .logo-Container {
+    nav {
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 8vh;
+    }
+
+    .btn-burger{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: red;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 35%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+   .btn-burger button {
+        opacity: 0;
+        margin: 35px;
+    }
+
+    .mostrar {
+        transform: translateX(0%);
+    }
+
+    .logo {
+        display:flex;
+        justify-content: right;
+        background-color: red;
+        margin: 10px;
+        border-radius: 50%; 
+        height: 50px; 
+        width: 50px;
+    }
+
+    .burger {
+        cursor: pointer;
+    }
+
+    .burger div {
+        display:block;
+        width: 28px;
+        height: 3px;
+        background-color: blue;
+        margin: 5px;
+        
+    }
+
+    .logo h1 {
+        font-size: 17px;
+        margin: 15px 0px 0px 60px;
+    }
+
+   .logo-Container {
         display: flex;
         height: 50vh;
         align-items: center;
@@ -71,7 +124,6 @@
     margin:10px;
 }
 
-
 .login-content input::-webkit-input-placeholder , .btn-registerContent input::-webkit-input-placeholder {
     color: white;
 }
@@ -82,7 +134,7 @@
 
    /* TIMELINE*/
 
-   .timeline-content {
+   .timeline-content, .profileGo {
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -165,20 +217,21 @@
         width: 100%;
     }   
     
-
-
  .contentPost {
      width: 50px;
      font-size: 15px;
      margin: auto;
  }
 
+
 #buttons, .like-container {
      display: flex;
      flex-direction: row; 
      align-items: flex-end;
      justify-content: flex-end;
+   height: 20px;
  }
+
 
  #delete, #edit, .like {
     justify-self: self-end;
@@ -190,4 +243,5 @@
     margin: 3px;
     margin-bottom: 5px;
 }
+
 }
