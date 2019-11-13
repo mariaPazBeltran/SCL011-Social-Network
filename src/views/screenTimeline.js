@@ -18,13 +18,13 @@ navbar.innerHTML =
 <h1>${user}</h1>
 </div>
 
-<div class="burger">
+<div id="burger">
 <div class="line1"></div>
 <div class="line2"></div>
 <div class="line3"></div>
 </div>
 
-    <ul class="btn-burger">
+    <ul id="btn-burger">
     <button id="perfil">Perfil</button>
     <button id="search-friends">Buscar Amigos</button>
     <button id="close">Cerrar Sesión</button>
@@ -56,6 +56,15 @@ navbar.innerHTML =
   timelineView.appendChild(createPost).innerHTML;
   createPost.appendChild(printPostContainer).innerHTML;
   container.appendChild(timelineContent);
+
+  const burger = document.getElementById("burger")
+  burger.addEventListener('click',()=>{
+    console.log(burger)
+    const nav = document.getElementById("btn-burger");
+    const navLinks = document.querySelectorAll(".btn-burger buttons");
+    nav.classList.toggle(".mostrar")
+    nav.style.display= "block";
+  })
 
 const btnProfile= document.getElementById("perfil")
 /* Se abre el perfil */
