@@ -2,29 +2,30 @@ import {editPost} from '../models/data.js'
 import { deletePost } from '../models/data.js'
 
 //contenedor mayor postCard que luego se imprimirá en el div "print-here"
-export const postViews = (doc) => {
-  let postCard = document.createElement("div")
-  postCard.className = "postCard";
-  postCard.innerHTML =
-    `<div id="img"></div> 
-  <span>${doc.user}</span>
-  <div id="buttons">
+export const postViews =(doc)=>{
+  let postCard=  document.createElement("div")
+  postCard.className="postCard";
+  postCard.innerHTML=
+  `<div id="buttons">
   <button id="edit${doc.post}" class="edit">Editar</button>
   <button id="delete${doc.id}">Eliminar</button>
   <button id="save${doc.post}" class="save" style="display:none">Guardar</button>
-  </div>`
-
+  </div>
+  <section id="userCdi">
+  <div id="img"></div> 
+  <span>${doc.user}</span>
+  </section>`
+  
   //contenedor para el texto del post
   let contentPost = document.createElement("div")
   contentPost.className = "contentPost"
-  contentPost.innerHTML = doc.post
-
+  contentPost.innerHTML = `<p>${doc.post}</p>`
 
   //contenedor de elemento like
   let likeContainer = document.createElement("div")
   likeContainer.className = "like-container"
   likeContainer.innerHTML =
-    `<button id="${doc.id}" class="like">like</button>
+    `<button id="like${doc.id}" class="like">Like</button>
   <span id="counter">${doc.likes}</span>`
 
   //asignando el contenedor "contentPost y likeContainer al contenedor postCard"
@@ -42,18 +43,20 @@ export const postViews = (doc) => {
   });
 
   //accion boton like
-  const btnLike = document.getElementById(doc.id);
+  const btnLike = document.getElementById("like"+doc.id);
   btnLike.addEventListener('click', () => {
     console.log(btnLike)
 
     let counter = doc.likes;
+    let likeStatus = doc.liked
     counter += 1;
-    // iLikeIt(id, liked, count)
+    
     var db = firebase.firestore();
 
     let docRef = db.collection('Post').doc(doc.id);
     return docRef.update({
-      likes: counter
+      likes: counter,
+      liked: likeStatus
     })
       .then(() => {
         console.log("Likes actualizado")

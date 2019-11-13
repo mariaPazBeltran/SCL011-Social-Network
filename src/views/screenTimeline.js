@@ -52,7 +52,6 @@ navbar.innerHTML =
   createPost.appendChild(printPostContainer).innerHTML;
   container.appendChild(timelineContent);
 
-
 const btnProfile= document.getElementById("perfil")
 /* Se abre el perfil */
 btnProfile.addEventListener('click',()=>{
@@ -71,8 +70,8 @@ logOut()
     /*El boton deberia poder guardar la info del usuario e imprimirla */
     let valuePost = document.getElementById("inputPost").value
     let counter = 0;
-
-    takePostValue(valuePost, counter)
+    let likeStatus = false
+    takePostValue(valuePost, counter, likeStatus)
 
   })
 }

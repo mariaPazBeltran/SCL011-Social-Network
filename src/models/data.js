@@ -2,15 +2,15 @@ import { postViews } from '../views/screenPostView.js'
 
 
 /*aquí guardamos los post en firebase*/
-export const takePostValue = (valuePost, counter) => {
+export const takePostValue = (valuePost, counter, likeStatus) => {
     var db = firebase.firestore();
     db.collection("Post").add({
         user: firebase.auth().currentUser.displayName,
         post: valuePost,
         date: new Date(),
         uId: firebase.auth().currentUser.uid,
-        likes: counter
-
+        likes: counter,
+        liked: likeStatus
     })
         .then(function (docRef) {
             console.log("Document successfully written!", docRef.id);
