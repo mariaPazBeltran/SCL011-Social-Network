@@ -548,7 +548,7 @@ align-items: center;
  }
 
 
- #delete, #edit, .like {
+ .delete, .edit, .like {
     justify-self: self-end;
     border-radius: 15px;
     background-color: transparent;
@@ -560,4 +560,3 @@ align-items: center;
 }
 
 }
-

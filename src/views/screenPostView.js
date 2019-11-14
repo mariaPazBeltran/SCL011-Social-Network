@@ -10,7 +10,7 @@ export const postViews =(doc)=>{
   postCard.innerHTML=
   `<div id="buttons">
   <button id="edit${doc.post}" class="edit">Editar</button>
-  <button id="delete${doc.id}">Eliminar</button>
+  <button id="delete${doc.id}" class="delete">Eliminar</button>
   <button id="save${doc.post}" class="save" style="display:none">Guardar</button>
   </div>
   <section id="userCdi">
@@ -28,7 +28,7 @@ export const postViews =(doc)=>{
   likeContainer.className = "like-container"
   likeContainer.innerHTML =
     `<button id="like${doc.id}" class="like">Like</button>
-  <span id="counter">${doc.likes}</span>`
+  <span id="counter${doc.id}">${doc.likes}</span>`
 
   //asignando el contenedor "contentPost y likeContainer al contenedor postCard"
   postCard.appendChild(contentPost)
@@ -61,9 +61,10 @@ export const postViews =(doc)=>{
       liked: likeStatus
     })
       .then(() => {
+        
         console.log("Likes actualizado")
-        document.getElementById("counter").innerHTML = ""
-        document.getElementById("counter").innerHTML = counter
+        document.getElementById("counter"+doc.id).innerHTML = ""
+        document.getElementById("counter"+doc.id).innerHTML = counter
 
       })
       .catch((error) => {
