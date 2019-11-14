@@ -11,7 +11,7 @@ export const viewLogin=()=>{
     contentLogin.className = "login-content"
     let logoInitContainer = document.createElement("div");
     logoInitContainer.className="logo-Container";
-    logoInitContainer.innerHTML=`<img src="" alt="holi" id=""></img>`;
+    logoInitContainer.innerHTML=`<img src="imgs/02_01.png" alt="Go!" id="img-logo" align="middle" height="30%" weight="30%"></img>`;
     let btnLoginContainer=document.createElement("div");
     btnLoginContainer.className="btn-LoginContent"
     console.log(container)
