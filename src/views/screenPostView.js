@@ -9,9 +9,9 @@ export const postViews =(doc)=>{
   postCard.className="postCard";
   postCard.innerHTML=
   `<div id="buttons">
-  <button id="edit${doc.post}" class="edit">Editar</button>
+  <button id="edit${doc.id}" class="edit">Editar</button>
   <button id="delete${doc.id}" class="delete">Eliminar</button>
-  <button id="save${doc.post}" class="save" style="display:none">Guardar</button>
+  <button id="save${doc.id}" class="save" style="display:none">Guardar</button>
   </div>
   <section id="userCdi">
   <div id="img"></div> 
@@ -74,10 +74,10 @@ export const postViews =(doc)=>{
   })
 
   //acionando boton editar
-  const editingPost = document.getElementById("edit"+doc.post);
+  const editingPost = document.getElementById("edit"+doc.id);
   editingPost.addEventListener('click', () => {
     console.log(editingPost);
-    editPost(doc.post);
+    editPost(doc.id);
   })
 
 }
