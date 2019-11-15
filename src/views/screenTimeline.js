@@ -26,7 +26,6 @@ navbar.innerHTML =
 
     <ul id="btn-burger">
     <button id="perfil">Perfil</button>
-    <button id="search-friends">Buscar Amigos</button>
     <button id="close">Cerrar Sesión</button>
     </ul>
 </nav>`

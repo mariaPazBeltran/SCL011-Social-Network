@@ -15,7 +15,6 @@ export const profile =()=>{
     </div>
         <ul>
         <button id="perfil">Perfil</button>
-        <button id="search-friends">Buscar Amigos</button>
         <button id="close">Cerrar Sesión</button>
         </ul>
     </nav>`
@@ -27,7 +26,7 @@ export const profile =()=>{
    <h1>${user}</h1>
    </div>
    <button id="return">volver al muro</button>
-   <h3>tu actividad</h3>`
+   `
    document.getElementById("goContainer").appendChild(navbar);
    document.getElementById("goContainer").appendChild(profileContainer);
    const clickReturn = document.getElementById("return");
