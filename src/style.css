@@ -10,7 +10,6 @@ body {
     font-family: 'Roboto', sans-serif;
     background-image: url(../src/imgs/01-01.jpg);
     background-size: cover;
-    overflow-x:hidden;
     height: 100vh;
 }
 
@@ -173,7 +172,7 @@ align-items: center;
     width: 50%;
     height: 12vh;
     border-radius: 15px;
-    border: 1px solid black;
+    border: 1px solid #525252;
     padding: 10px 20px;
     font-size: 14px;
 }
@@ -314,7 +313,6 @@ align-items: center;
 
     body {
         font-size:12px;
-        font-family: 'Roboto', sans-serif;
         background: linear-gradient(#59CBFF, #255FFF);
         overflow-x:hidden;
     }
@@ -335,18 +333,17 @@ align-items: center;
         right: 0px;
         height: 92vh;
         top: 8vh;
-        background-color: red;
+        background-color: #59CBFF;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 35%;
+        width: 40%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
         display: none;
     }
 
    #btn-burger button {
-       
         margin: 35px;
         justify-self: self-end;
         border-radius: 15px;
@@ -359,16 +356,6 @@ align-items: center;
 
     .mostrar {
         transform: translateX(0%);
-    }
-
-    .logo {
-        display:flex;
-        justify-content: right;
-        background-color: red;
-        margin: 10px;
-        border-radius: 50%; 
-        height: 50px; 
-        width: 50px;
     }
 
     #burger {
@@ -385,157 +372,58 @@ align-items: center;
     }
 
     .logo h1 {
-        font-size: 17px;
-        margin: 15px 0px 0px 60px;
+        font-size: 16px;
     }
 
-   .logo-Container {
-        display: flex;
-        height: 50vh;
-        align-items: center;
-        justify-content: center;
-    }
- 
-    .buttons-Init {
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        height:50vh;
+    button{
+        padding: 5px 15px;
     }
 
-    .buttons-Init button, .login-content button, .btn-registerContent button {
-        background: transparent;
-        color: white;
-        border: 2px solid white;
-        font-weight: bolder;
-        margin: 10px;
-        border-radius: 20px;
-        width: 210px;
-        height: 40px;
-    }
 
-.login-content, .new-Users {
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.btn-LoginContent, .new-Users .btn-registerContent {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    height:50vh;
-}
-
-.login-content input, .btn-registerContent input {
-    background: transparent;
-    width: 250px;
-    height: 20px;
-    border: 0px;
-    color: white;
-    border-bottom: 2px solid white;
-    margin:10px;
-}
-
-.login-content input::-webkit-input-placeholder , .btn-registerContent input::-webkit-input-placeholder {
-    color: white;
-}
-
-.login-content input:focus {
-    outline: 0;
-   }
 
    /* TIMELINE*/
 
    .timeline-content, .profileGo {
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+    margin: 0;
     }
 
 .timeline-view {
-    background-color: #F4F4F4;
+    background-color: #e0e0e0;
     width: 100%;
+    padding: 20px;
 }
 
 /* POST */
 
-#print-here {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .postCard {
-    display: block;
-    flex-direction: row;
-    width: 72vh;
+    width: 80%;
     margin: 10px;
-    background-color: #c4c4c4;
-    border-radius: 10px;
 }
-
-.postCard #img {
-   background-color: white;
-   margin: 10px;
-   border-radius: 50%; 
-   height: 50px; 
-   width: 50px;
-}
-#userCdi{
-    display: flex;
-    align-items: center;
-}
-    .create-Post {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 
     .create-Post input {
-        margin-top:10px;
-        align-self: center;
-        width: 70vh;
+        width: 80%;
         height: 10vh;
-        border-radius: 15px;
-        border: 1px solid black;
+        border: 1px solid #525252;
     }
 
     .create-Post input::placeholder {
-        color:black;
-        align-content: initial;
-        font-size: 13px;
-        font-weight: bolder;
-    }
-
-    .create-Post input:focus{
-        outline:0;
+        color: #525252;
+        font-size: 12px;
+        padding-left: 20px;
     }
 
     .create-Post #btn-post {
-        background:white;
-        color: #255FFF;
-        font-weight: bolder;
-        margin: 7px;
-        border-radius: 15px;
-        width: 70vh;
+        margin: 10px;
+        border-radius: 10px;
+        width: 80%;
         height: 30px;
-    }
-
-    .print-post-container {
-        border: 1px solid black;
-        height: 100%;
-        width: 100%;
-    }   
+    } 
     
  .contentPost {
-     width: 50px;
-     font-size: 15px;
-     margin: auto;
+     width: 80%;
+     font-size: 14px;
+     margin: 0px 10px 20px 20px;
  }
 
 
@@ -546,17 +434,5 @@ align-items: center;
      justify-content: flex-end;
    height: 20px;
  }
-
-
- .delete, .edit, .like {
-    justify-self: self-end;
-    border-radius: 15px;
-    background-color: transparent;
-    border: 1px solid black;
-    width:12vh;
-    height: 4vh;
-    margin: 3px;
-    margin-bottom: 5px;
-}
 
 }
